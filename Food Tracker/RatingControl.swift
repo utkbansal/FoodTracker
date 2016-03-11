@@ -18,12 +18,19 @@ class RatingControl: UIView {
         let button = UIButton(frame: CGRect(x: 0, y: 0, width: 44, height: 44))
         button.backgroundColor = UIColor.redColor()
         
+        // Beware of the action, it has a ':' in the end. Dont know why!
+        button.addTarget(self, action: "ratingButtonTapped:", forControlEvents: .TouchDown)
         self.addSubview(button)
         
     }
     
     override func intrinsicContentSize() -> CGSize {
         return CGSize(width: 240, height: 44)
+    }
+    
+    //MARK: Button Action
+    func ratingButtonTapped(button: UIButton){
+        print("Button Tapped")
     }
 
 
